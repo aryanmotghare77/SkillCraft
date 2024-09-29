@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkillsCraft</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- Navbar -->
+  {{>navbar}}
+
+  <div class="flex">
+
+    <!-- Sidebar -->
+    {{>html_sidebar}}
+
+    <!-- Main Content -->
+    <div class="ml-0 md:ml-64 w-full">
+      <div class="container mx-auto p-6">
+
+        <!-- Section: Core Concepts of HTML -->
+        <section class="mb-12">
+          <h1 class="text-3xl font-bold mb-6">Basics of HTML</h1>
+
+          <!-- Concept 1: Introduction to HTML -->
+          <div class="mb-8"></div>
+          <h2 class="text-2xl font-semibold mb-4">Basic HTML Structure</h2>
+          <p class="text-gray-700 mb-4">
+            Every HTML document follows a basic structure. It contains a `doctype` declaration, followed by the `html`,
+            `head`, and `body` tags.
+          </p>
+          <pre class="bg-gray-100 p-4 rounded-lg border border-gray-300 mb-4">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My First HTML Structure&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;This is the body content.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+                        </pre>
+      </div>
+
+      <!-- Concept 2:  HTML DOCTYPE -->
+      <div class="mb-8">
+        <h2 class="text-2xl font-semibold mb-4">HTML DOCTYPE</h2>
+        <p class="text-gray-700 mb-4">
+          The <strong>!DOCTYPE</strong> declaration represents the document type, and helps browsers to display web
+          pages correctly.
+        </p>
+        <pre class="bg-gray-100 p-4 rounded-lg border border-gray-300 mb-4 ml-6 mr-6">
+&lt;!DOCTYPE html&gt;
+                        </pre>
+                 
+      </div>
+      <br>
+      <!-- Concept 3: Basic HTML Heading -->
+      <div class="mb-8">
+        <h2 class="text-2xl font-semibold mb-4">HTML Headings</h2>
+        <p class="text-gray-700 mb-4">
+          HTML headings are defined with the &lt;h1&gt to &lt;h6&gt tags. &lt;h1&gt defines the most important heading
+          &lt;h6&gt defines the least important heading: </p>
+        <pre id="code-block"class="bg-gray-100 p-4 rounded-lg border border-gray-300 mb-4 ml-6 mr-6">
+&lt;h1&gtThis is heading 1&lt;/h1&gt;
+&lt;h2&gtThis is heading 2&lt;/h2&gt;
+&lt;h3&gtThis is heading 3&lt;/h3&gt;
+                        </pre>
+                               <button id="copy-button" class="absolute bg-blue-600 text-white py-1 px-3 rounded hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300">Copy</button>
+            </button>
+      </div>
+      <br>
+      {{!-- Concept 4 : HTML Paragaraphs --}}
+      <div class="mt-6 mb-8">
+        <h2 class="text-2xl font-semibold mb-4">HTML Paragaraphs</h2>
+        <p class="text-gray-700 mb-4">
+          HTML paragraphs are defined with the &lt;p&gt tag:: </p>
+        <pre id="code-block1"class="bg-gray-100 p-4 rounded-lg border border-gray-300 mb-4 ml-6 mr-6">
+&lt;p&gtThis is a paragraph&lt;/p&gt;
+                        </pre>
+
+            <button id="copy-button1" class="absolute bg-blue-600 text-white py-1 px-3 rounded hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300">
+                Copy
+            </button>
+      </div>
+<br>
+      {{!-- Concept 5 :About HTML  --}}
+      <div class="mt-6 mb-8">
+        <h2 class="text-2xl font-semibold mb-4">HTML Source Code</h2>
+        <p class="text-gray-700 mb-4">
+<strong> You ever seen a Web page and wondered "Hey! How did they do that?"</strong>
+<br>
+<br>
+View HTML Source Code:
+Click <kbd>Ctrl</kbd> + <kbd>U</kbd> in an HTML page, or right-click on the page and select "View Page Source". This will open a new tab containing the HTML source code of the page.
+<br>
+<br>
+Inspect an HTML Element:
+Right-click on an element (or a blank area), and choose "Inspect" to see what elements are made up of (you will see both the HTML and the CSS). You can also edit the HTML or CSS on-the-fly in the Elements or Styles panel that opens.</p>
+        
+      </div>
+      </section>
+
+      <!-- HTML Code Editor Section -->
+     {{>editor}}
+
+    </div>
+  </div>
+  </div>
+{{>footer}}
+  <!-- JavaScript to Handle Sidebar Toggle and HTML Editor -->
+  <script>
+  
+         document.getElementById('copy-button').addEventListener('click', function () {
+            const codeBlock = document.getElementById('code-block').innerText;
+            navigator.clipboard.writeText(codeBlock).then(() => {
+                alert('Code copied to clipboard!');
+            }).catch(err => {
+                console.error('Error copying code: ', err);
+            });
+        });
+         document.getElementById('copy-button1').addEventListener('click', function () {
+            const codeBlock = document.getElementById('code-block1').innerText;
+            navigator.clipboard.writeText(codeBlock).then(() => {
+                alert('Code copied to clipboard!');
+            }).catch(err => {
+                console.error('Error copying code: ', err);
+            });
+        });
+         
+  </script>
+
+</body>
+
+</html>

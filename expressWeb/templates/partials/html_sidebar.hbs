@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+    <div class="flex">
+
+        <!-- Sidebar -->
+       <div id="sidebar" class="bg-white  w-64 h-full-screen fixed md:relative shadow-lg md:block hidden z-20">
+            <ul class="space-y-4 p-6">
+                <li>
+                    <a href="/html" class="text-white-600 block">HTML Introduction</a>
+                </li>
+                <li>
+                    <a href="/html_basics" class="text-white-600 block hover:text-blue-600">HTML Basics</a>
+                </li>
+                <li>
+                    <a href="/html_forms" class="text-white-600 block hover:text-blue-600">HTML Forms</a>
+                </li>
+                <li>
+                    <a href="/html_table" class="text-white-600 block hover:text-blue-600">HTML Tables</a>
+                </li>
+                <li>
+                    <a href="/html_div" class="text-white-600 block hover:text-blue-600">HTML Div</a>
+                </li>
+            </ul>
+        </div>
+
+        
+
+     <!-- JavaScript to Handle Sidebar Toggle and HTML Editor -->
+     <script>
+    const htmlCodeArea = document.getElementById('html-code');
+    const outputFrame = document.getElementById('output-frame');
+    const runButton = document.getElementById('run-btn');
+    const clearButton = document.getElementById('clear-btn');
+
+    // Function to update the iframe content with the HTML code
+    function updateOutput() {
+      const outputDocument = outputFrame.contentDocument || outputFrame.contentWindow.document;
+      outputDocument.open();
+      outputDocument.write(htmlCodeArea.value);
+      outputDocument.close();
+    }
+
+    // Run code on button click
+    runButton.addEventListener('click', updateOutput);
+
+    // Clear the editor and iframe output
+    clearButton.addEventListener('click', function () {
+      htmlCodeArea.value = '';
+      updateOutput();
+    });
+
+    // Initial run on page load
+    window.onload = updateOutput;
+
+
+    function copyCode(id) {
+      var copyText = document.getElementById(id);
+      copyText.select();
+      copyText.setSelectionRange(0, 99999); // For mobile devices
+
+      // Copy the text inside the text area
+      document.execCommand("copy");
+
+      // Alert the copied text (Optional)
+      alert("Code copied to clipboard!");
+    }
+   
+  </script>
+
+    </body>
+    </html>

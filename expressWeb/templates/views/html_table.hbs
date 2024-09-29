@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkillsCraft</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- Navbar -->
+  {{>navbar}}
+
+  <div class="flex">
+
+    <!-- Sidebar -->
+    {{>html_sidebar}}
+
+    <!-- Main Content -->
+    <div class="ml-0 md:ml-64 w-full">
+      <div class="container mx-auto p-6">
+
+        <!-- Section: Core Concepts of HTML -->
+        <section class="mb-12">
+          <h1 class="text-3xl font-bold mb-6">HTML Tables</h1>
+
+          <!-- Concept 1: Introduction to HTML -->
+          <div class="mb-8">
+          <h2 class="text-2xl font-semibold mb-4">Define an HTML Table</h2>
+          <p class="text-gray-700 mb-4">
+            A table in HTML consists of table cells inside rows and columns.
+          </p>
+          <pre id="code-block"class="bg-gray-100 p-4 rounded-lg border border-gray-300 mb-4">
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Company&lt;/th&gt;
+    &lt;th&gt;Contact&lt;/th&gt;
+    &lt;th&gt;Country&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Alfreds Futterkiste&lt;/td&gt;
+    &lt;td&gt;Maria Anders&lt;/td&gt;
+    &lt;td&gt;Germany&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Centro comercial Moctezuma&lt;/td&gt;
+    &lt;td&gt;Francisco Chang&lt;/td&gt;
+    &lt;td&gt;Mexico&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+                        </pre>
+                         <button id="copy-button" class="absolute bg-blue-600 text-white py-1 px-3 rounded hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300">Copy </button>
+      
+                     
+      </div>
+<br>
+      <!-- Concept 2:  HTML DOCTYPE -->
+      <div class="mt-6 mb-8">
+        <h2 class="text-2xl font-semibold mb-4">Table Rows</h2>
+        <p class="text-gray-700 mb-4">
+          Each table row starts with a &lt;tr&gt; and ends with a &lt;/tr&gt; tag.
+        </p>
+              <pre id="code-block1"class="bg-gray-100 p-4 rounded-lg border border-gray-300 mb-4">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+table, th, td {
+  border:1px solid black;
+}
+&lt;/style&gt;
+&lt;body&gt;
+
+&lt;h2&gt;TR elements define table rows&lt;/&gt;&gt;
+
+&lt;table style="width:100%"&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Emil&lt;/td&gt;
+    &lt;td&gt;Tobias&lt;/td&gt;
+    &lt;td&gt;Linus&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;16&lt;/td&gt;
+    &lt;td&gt;14&lt;/t&gt;
+    &lt;td&gt;10&lt;/td>
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+
+                        </pre>
+                         <button id="copy-button1" class="absolute bg-blue-600 text-white py-1 px-3 rounded hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300">Copy </button>
+          
+      </div>
+      <br>
+      <br>
+      <!-- Concept 3: Basic HTML Heading -->
+      <div class="mt-6 mb-8">
+        <h2 class="text-2xl font-semibold mb-4">Table Headers</h2>
+        <p class="text-gray-700 mb-4">
+          Sometimes you want your cells to be table header cells. In those cases use the &lt;th&gt; tag instead of the &lt;td&gt; tag:. </p>
+        <pre id="code-block2"class="bg-gray-100 p-4 rounded-lg border border-gray-300 mb-4 ml-6 mr-6">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+table, th, td {
+  border:1px solid black;
+}
+&lt;/style&gt;
+&lt;body&gt;
+
+&lt;h2&gt;TH elements define table headers&lt;/h2&gt;
+
+&lt;table style="width:100%"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Person 1&lt;/th&gt;
+    &lt;th&gt;Person 2&lt;/th&gt;
+    &lt;th&gt;Person 3&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr>
+    &lt;t&gt;>Emil&lt;/td&gt;
+    &lt;td&gt;Tobias&lt;/td&gt;
+    &lt;td&gt;Linus&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;16&lt;/td&gt;
+    &lt;td&gt;14&lt;/td&gt;
+    &lt;td&gt;10&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html>&gt;
+
+                        </pre>
+     <button id="copy-button2" class="absolute bg-blue-600 text-white py-1 px-3 rounded hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300">Copy </button>
+                    
+                     
+      </div>
+      <br>
+      </section>
+
+      <!-- HTML Code Editor Section -->
+      {{>editor}}
+
+    </div>
+  </div>
+  </div>
+
+
+{{!-- {{>footer}} --}}
+  <!-- JavaScript to Handle Sidebar Toggle and HTML Editor -->
+  <script>
+         document.getElementById('copy-button').addEventListener('click', function () {
+            const codeBlock = document.getElementById('code-block').innerText;
+            navigator.clipboard.writeText(codeBlock).then(() => {
+                alert('Code copied to clipboard!');
+            }).catch(err => {
+                console.error('Error copying code: ', err);
+            });
+        });
+         document.getElementById('copy-button1').addEventListener('click', function () {
+            const codeBlock = document.getElementById('code-block1').innerText;
+            navigator.clipboard.writeText(codeBlock).then(() => {
+                alert('Code copied to clipboard!');
+            }).catch(err => {
+                console.error('Error copying code: ', err);
+            });
+        });
+         document.getElementById('copy-button2').addEventListener('click', function () {
+            const codeBlock = document.getElementById('code-block2').innerText;
+            navigator.clipboard.writeText(codeBlock).then(() => {
+                alert('Code copied to clipboard!');
+            }).catch(err => {
+                console.error('Error copying code: ', err);
+            });
+        });
+  </script>
+
+</body>
+
+</html>
