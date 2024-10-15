@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+    <div class="flex">
+
+        <!-- Sidebar -->
+       <div id="sidebar" class="bg-white  w-64 h-full-screen fixed md:relative shadow-lg md:block hidden z-20">
+            <ul class="space-y-4 p-6">
+                <li>
+                    <a href="/js_intro" class="text-white-600 block hover:text-blue-600">Js Introduction</a>
+                </li>
+                 <li>
+                    <a href="/js_syntax" class="text-white-600 block hover:text-blue-600">Js Syntax</a>
+                </li>
+                <li>
+                    <a href="/js_output" class="text-white-600 block hover:text-blue-600">Js Output</a>
+                </li>
+                <li>
+                    <a href="/js_statement" class="text-white-600 block hover:text-blue-600">Js Statements</a>
+                </li>
+                <li>
+                    <a href="/js_enroll" class="text-white-600 block hover:text-blue-600">Js Datatypes</a>
+                </li>
+                <li>
+                    <a href="/js_enroll" class="text-white-600 block hover:text-blue-600">Js Comments</a>
+                </li>
+                <li>
+                    <a href="/js_enroll" class="text-white-600 block hover:text-blue-600">Js Operators</a>
+                </li>
+                <li>
+                    <a href="/js_enroll" class="text-white-600 block hover:text-blue-600">Js Functions</a>
+                </li>
+                <li>
+                    <a href="/js_enroll" class="text-white-600 block hover:text-blue-600">Js Objects</a>
+                </li>
+                <li>
+                    <a href="/js_enroll" class="text-white-600 block hover:text-blue-600">Js Events</a>
+                </li>
+               
+            </ul>
+        </div>
+
+        
+
+     <!-- JavaScript to Handle Sidebar Toggle and HTML Editor -->
+     <script>
+    const htmlCodeArea = document.getElementById('html-code');
+    const outputFrame = document.getElementById('output-frame');
+    const runButton = document.getElementById('run-btn');
+    const clearButton = document.getElementById('clear-btn');
+
+    // Function to update the iframe content with the HTML code
+    function updateOutput() {
+      const outputDocument = outputFrame.contentDocument || outputFrame.contentWindow.document;
+      outputDocument.open();
+      outputDocument.write(htmlCodeArea.value);
+      outputDocument.close();
+    }
+
+    // Run code on button click
+    runButton.addEventListener('click', updateOutput);
+
+    // Clear the editor and iframe output
+    clearButton.addEventListener('click', function () {
+      htmlCodeArea.value = '';
+      updateOutput();
+    });
+
+    // Initial run on page load
+    window.onload = updateOutput;
+
+
+    function copyCode(id) {
+      var copyText = document.getElementById(id);
+      copyText.select();
+      copyText.setSelectionRange(0, 99999); // For mobile devices
+
+      // Copy the text inside the text area
+      document.execCommand("copy");
+
+      // Alert the copied text (Optional)
+      alert("Code copied to clipboard!");
+    }
+   
+  </script>
+
+    </body>
+    </html>

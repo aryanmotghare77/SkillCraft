@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillsCraft</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+       body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+        pre {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            max-width: 800px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .keyword { color: #66d9ef; }
+        .function { color: #a6e22e; }
+        .string { color: #e6db74; }
+        .comment { color: #75715e; }
+        .number { color: #ae81ff; }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    {{>navbar}}
+
+    <div class="flex">
+
+        <!-- Sidebar -->
+        {{>py_sidebar}}
+
+        <!-- Main Content -->
+        <div class="ml-0 md:ml-64 w-full">
+            <div class="container mx-auto p-6">
+
+                <!-- Section: Core Concepts of HTML -->
+                <section class="mb-12">
+                    <h1 class="text-3xl font-bold mb-6">Python Suntax</h1>
+
+                    <!-- Concept 1: Introduction to HTML -->
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-semibold mb-4">Syntax of Python</h2>
+                        <p class="text-gray-700 mb-4">
+                     Python syntax can be executed by writing directly in the Command Line:
+                       </p>
+                        <pre>
+        <span class="keyword">>>>print</span>(<span class="string">'Hello World!'</span>)
+        <p>Hello World!</p>
+</pre><p>
+                    </div>
+
+                    <!-- Concept 2: Basic HTML Structure -->
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-semibold mb-4">Python Indentation</h2>
+                        <p class="text-gray-700 mb-4">
+                            Indentation refers to the spaces at the beginning of a code line.
+<br>
+<hr>
+Where in other programming languages the indentation in code is for readability only, the indentation in Python is very important.
+<br>
+<br>
+Python uses indentation to indicate a block of code.
+<br>
+<br>
+                            <pre>
+ <span class="keyword">if</span> <span class="string">5>2</span>:
+        <span class="keyword">print</span>(<span class="string">'Five is greater than 2'</span>)
+    
+</pre>
+                        </p>
+                    </div>
+
+
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-semibold mb-4">Python Variables</h2>
+                        <p class="text-gray-700 mb-4">
+                        In Python, variables are created when you assign a value to it:
+                        </p>
+                        <pre id="code-block">
+<span class="comment"># Variables in Python</span>
+<span class="keyword">x</span> = <span class="function">5</span>
+<span class="keyword">y</span> = <span class="function">"This is a string Variable"</span>
+</pre>
+<br>
+ <button id="copy-button" class="absolute bg-blue-600 text-white py-1 px-3 rounded hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300">
+                Copy
+            </button>
+                    </div>
+
+
+<br>
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-semibold mb-4">Python Comments</h2>
+                        <p class="text-gray-700 mb-4">
+                        In Python, we use hashtag at front of the line to identicate it as a comment
+                       <pre id="code-block1">
+<span class="comment"># This is a comment in Python</span>
+
+<span class="comment"># Comment 1</span>
+<span class="comment"># Comment 2</span>
+<span class="comment"># Comment 3</span>
+<span class="comment"># Comment 4</span>
+<span class="comment"># Comment 5</span>
+
+</pre>
+<br>
+ <button id="copy-button1" class="absolute bg-blue-600 text-white py-1 px-3 rounded hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300">
+                Copy
+            </button>
+                        </p>
+                    </div>
+                </section>
+
+                <!-- HTML Code Editor Section -->
+                 {{!-- {{>py_editor}} --}}
+
+            </div>
+        </div>
+    </div>
+
+     <!-- JavaScript to Handle Sidebar Toggle and HTML Editor -->
+     <script>
+    document.getElementById('copy-button1').addEventListener('click', function () {
+            const codeBlock = document.getElementById('code-block1').innerText;
+            navigator.clipboard.writeText(codeBlock).then(() => {
+                alert('Code copied to clipboard!');
+            }).catch(err => {
+                console.error('Error copying code: ', err);
+            });
+        });
+    document.getElementById('copy-button').addEventListener('click', function () {
+            const codeBlock = document.getElementById('code-block').innerText;
+            navigator.clipboard.writeText(codeBlock).then(() => {
+                alert('Code copied to clipboard!');
+            }).catch(err => {
+                console.error('Error copying code: ', err);
+            });
+        });
+  </script>
+
+    </body>
+    </html>

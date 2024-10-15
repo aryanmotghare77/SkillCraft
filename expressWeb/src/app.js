@@ -26,7 +26,7 @@ app.get("/about",(req,res)=>{
 app.get("/courses",(req,res)=>{
     res.render("courses");
 })
-app.get("/login",(req,res)=>{
+app.get("/register",(req,res)=>{
     res.render("register");
 })
 app.get("/registration",(req,res)=>{
@@ -47,6 +47,56 @@ app.get("/html_table",(req,res)=>{
 app.get("/html_div",(req,res)=>{
     res.render("html_div");
 })
+app.get("/py",(req,res)=>{
+    res.render("py");
+})
+app.get("/py_syntax",(req,res)=>{
+    res.render("py_syntax");
+})
+app.get("/py_var",(req,res)=>{
+    res.render("py_var");
+})
+app.get("/py_datatypes",(req,res)=>{
+    res.render("py__datatypes");
+})
+app.get("/js",(req,res)=>{
+    res.render("prices_js");
+})
+app.get("/js_enroll",(req,res)=>{
+    res.render("js");
+})
+app.get("/js_intro",(req,res)=>{
+    res.render("js");
+})
+app.get("/js_syntax",(req,res)=>{
+    res.render("js_syntax");
+})
+app.get("/js_output",(req,res)=>{
+    res.render("js_output");
+})
+app.get("/js_statement",(req,res)=>{
+    res.render("js_statement");
+})
+app.get("/c_prices",(req,res)=>{
+    res.render("c_prices");
+})
+app.get("/c",(req,res)=>{
+    res.render("c");
+})
+app.get("/c_syntax",(req,res)=>{
+    res.render("c_syntax");
+})
+app.get("/c_output",(req,res)=>{
+    res.render("c_output");
+})
+app.get("/c_variables",(req,res)=>{
+    res.render("c_variable");
+})
+app.get("/login",(req,res)=>{
+    res.render("login");
+})
+
+
 app.post("/registration", async (req,res)=>{
     try {
         const registerEmployee = new Register({
@@ -61,6 +111,27 @@ app.post("/registration", async (req,res)=>{
     } catch (error) {
         res.status(400).send(error);
     } 
+});
+
+// Login Check
+
+app.post("/login", async(req,res)=>{
+    try {
+        const email = req.body.email;
+        const password = req.body.password;
+
+        
+        const userEmail = await Register.findOne({email:email})
+        // res.send(userEmail.password);
+        if(userEmail.password === password){
+            res.status(201).render("courses");
+        }else{
+            res.send("Invalid Login Details");
+        }
+        console.log(userEmail);
+    } catch (error) {
+        res.status(400).send("Invalid Login Details")
+    }
 });
 
 app.listen(port,()=>{

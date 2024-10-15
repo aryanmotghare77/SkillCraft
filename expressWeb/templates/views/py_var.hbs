@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillsCraft</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+       body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+        pre {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            max-width: 800px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .keyword { color: #66d9ef; }
+        .function { color: #a6e22e; }
+        .string { color: #e6db74; }
+        .comment { color: #75715e; }
+        .number { color: #ae81ff; }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    {{>navbar}}
+
+    <div class="flex">
+
+        <!-- Sidebar -->
+        {{>py_sidebar}}
+
+        <!-- Main Content -->
+        <div class="ml-0 md:ml-64 w-full">
+            <div class="container mx-auto p-6">
+
+                <!-- Section: Core Concepts of HTML -->
+                <section class="mb-12">
+                    <h1 class="text-3xl font-bold mb-6">Python Suntax</h1>
+
+                    <!-- Concept 1: Introduction to HTML -->
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-semibold mb-4">Python Variables</h2>
+                        <p class="text-gray-700 mb-4">
+                     Variables are containers for storing data values.
+                       </p>
+                    </div>
+
+                    <!-- Concept 2: Basic HTML Structure -->
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-semibold mb-4">Creating a Variable</h2>
+                        <p class="text-gray-700 mb-4">
+                           Python has no command for declaring a variable.
+
+<br>
+<hr>
+    A variable is created the moment you first assign a value to it.
+<br>
+
+<br>
+                          <pre id="code-block">
+<span class="comment"># Variables in Python</span>
+<span class="keyword">x</span> = <span class="function">5</span>
+<span class="keyword">y</span> = <span class="function">"John"</span>
+<span class="keyword">print</span>(x)
+<span class="keyword">print</span>(y)
+</pre>
+<br>
+ <button id="copy-button" class="absolute bg-blue-600 text-white py-1 px-3 rounded hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300">
+                Copy
+            </button>
+                        </p>
+                    </div>
+
+<br>
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-semibold mb-4">Casting</h2>
+                        <p class="text-gray-700 mb-4">
+                        If you want to specify the data type of a variable, this can be done with casting.
+                        </p>
+                        <pre id="code-block1">
+<span class="comment"># Variable Casting in Python</span>
+<span class="keyword">x</span> = <span class="string">str(<span class="number">3</span>)</span>
+<span class="keyword">y</span> = <span class="string">int(<span class="number">3</span>)</span>
+<span class="keyword">z</span> = <span class="string">float(<span class="number">3</span>)</span>
+</pre>
+<br>
+ <button id="copy-button1" class="absolute bg-blue-600 text-white py-1 px-3 rounded hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300">
+                Copy
+            </button>
+                    </div>
+
+
+<br>
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-semibold mb-4">Get the Type</h2>
+                        <p class="text-gray-700 mb-4">
+                       You can get the data type of a variable with the type() function.
+                      <pre id="code-block2">
+<span class="comment"># Finding Type in Python</span>
+<span class="keyword">x</span> = <span class="string">str(<span class="keyword">type(<span class="number">3</span>)</span>)</span>
+<span class="keyword">y</span> = <span class="string">str(<span class="keyword">type(<span class="number">'John'</span>)</span>)</span>
+
+</pre>
+<br>
+ <button id="copy-button1" class="absolute bg-blue-600 text-white py-1 px-3 rounded hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300">
+                Copy
+            </button>
+                        </p>
+                    </div>
+                </section>
+
+                <!-- HTML Code Editor Section -->
+                 {{!-- {{>py_editor}} --}}
+
+            </div>
+        </div>
+    </div>
+
+     <!-- JavaScript to Handle Sidebar Toggle and HTML Editor -->
+     <script>
+    document.getElementById('copy-button1').addEventListener('click', function () {
+            const codeBlock = document.getElementById('code-block1').innerText;
+            navigator.clipboard.writeText(codeBlock).then(() => {
+                alert('Code copied to clipboard!');
+            }).catch(err => {
+                console.error('Error copying code: ', err);
+            });
+        });
+    document.getElementById('copy-button').addEventListener('click', function () {
+            const codeBlock = document.getElementById('code-block').innerText;
+            navigator.clipboard.writeText(codeBlock).then(() => {
+                alert('Code copied to clipboard!');
+            }).catch(err => {
+                console.error('Error copying code: ', err);
+            });
+        });
+  </script>
+
+    </body>
+    </html>

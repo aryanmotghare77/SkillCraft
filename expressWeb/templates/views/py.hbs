@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillsCraft</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+        pre {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            max-width: 800px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .keyword { color: #66d9ef; }
+        .function { color: #a6e22e; }
+        .string { color: #e6db74; }
+        .comment { color: #75715e; }
+        .number { color: #ae81ff; }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    {{>navbar}}
+
+    <div class="flex">
+
+        <!-- Sidebar -->
+        {{>py_sidebar}}
+
+        <!-- Main Content -->
+        <div class="ml-0 md:ml-64 w-full">
+            <div class="container mx-auto p-6">
+
+                <!-- Section: Core Concepts of HTML -->
+                <section class="mb-12">
+                    <h1 class="text-3xl font-bold mb-6">Introduction</h1>
+
+                    <!-- Concept 1: Introduction to HTML -->
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-semibold mb-4">Introduction to Python</h2>
+                        <p class="text-gray-700 mb-4">
+                     Python is a popular programming language. It was created by Guido van Rossum, and released in 1991.
+                       </p>
+                        <pre>
+        <span class="keyword">print</span>(<span class="string">'Hello World!'</span>)
+</pre>
+                    </div>
+
+                    <!-- Concept 2: Basic HTML Structure -->
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-semibold mb-4">What can Python Do?</h2>
+                        <p class="text-gray-700 mb-4">
+                            <ul type="circle">
+                                <li>
+                                Python can be used on a server to create web applications.
+                                </li>
+                                <li>
+                                Python can be used alongside software to create workflows.
+                                </li>
+                                <li>
+                                Python can connect to database systems. It can also read and modify files.
+                                </li>
+                                <li>
+                            Python can be used to handle big data and perform complex mathematics.
+                                </li>
+                            </ul>
+                        </p>
+                    </div>
+
+
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-semibold mb-4">Why Python?</h2>
+                        <p class="text-gray-700 mb-4">
+                            <ul type="circle">
+                                <li>
+                                Python works on different platforms (Windows, Mac, Linux, Raspberry Pi, etc).
+                                </li>
+                                <li>
+                               Python has a simple syntax similar to the English language.
+
+                                </li>
+                                <li>
+                              Python runs on an interpreter system, meaning that code can be executed as soon as it is written. This means that prototyping can be very quick. </li>
+                                <li>
+                           Python can be treated in a procedural way, an object-oriented way or a functional way.
+                                </li>
+                            </ul>
+                        </p>
+                    </div>
+
+
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-semibold mb-4">Python Syntax compared to other programming languages</h2>
+                        <p class="text-gray-700 mb-4">
+                            <ul type="circle">
+                                <li>
+                              Python relies on indentation, using whitespace, to define scope; such as the scope of loops, functions and classes. Other programming languages often use curly-brackets for this purpose.  
+                              </li>
+                                <li>
+                                    <br>
+                             Python uses new lines to complete a command, as opposed to other programming languages which often use semicolons or parentheses
+                                </li>
+                                <br>
+                                <li>
+                              Python runs on an interpreter system, meaning that code can be executed as soon as it is written. This means that prototyping can be very quick. </li>
+                                </li>
+                            </ul>
+                        </p>
+                    </div>
+                </section>
+
+                <!-- HTML Code Editor Section -->
+                 {{!-- {{>py_editor}} --}}
+
+            </div>
+        </div>
+    </div>
+
+     <!-- JavaScript to Handle Sidebar Toggle and HTML Editor -->
+     <script>
+    const htmlCodeArea = document.getElementById('html-code');
+    const outputFrame = document.getElementById('output-frame');
+    const runButton = document.getElementById('run-btn');
+    const clearButton = document.getElementById('clear-btn');
+
+    // Function to update the iframe content with the HTML code
+    function updateOutput() {
+      const outputDocument = outputFrame.contentDocument || outputFrame.contentWindow.document;
+      outputDocument.open();
+      outputDocument.write(htmlCodeArea.value);
+      outputDocument.close();
+    }
+
+    // Run code on button click
+    runButton.addEventListener('click', updateOutput);
+
+    // Clear the editor and iframe output
+    clearButton.addEventListener('click', function () {
+      htmlCodeArea.value = '';
+      updateOutput();
+    });
+
+    // Initial run on page load
+    window.onload = updateOutput;
+  </script>
+
+    </body>
+    </html>

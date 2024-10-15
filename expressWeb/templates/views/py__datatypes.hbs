@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillsCraft</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+       body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+        pre {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            max-width: 800px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    
+        .keyword { color: #3efff5; }
+        .keywords { color: #b10000; }
+        .function { color: #a6e22e; }
+        .string { color: #e6db74; }
+        .comment { color: #75715e; }
+        .number { color: #ae81ff; }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    {{>navbar}}
+
+    <div class="flex">
+
+        <!-- Sidebar -->
+        {{>py_sidebar}}
+
+        <!-- Main Content -->
+        <div class="ml-0 md:ml-64 w-full">
+            <div class="container mx-auto p-6">
+
+                <!-- Section: Core Concepts of HTML -->
+                <section class="mb-12">
+                    <h1 class="text-3xl font-bold mb-6">Python Datatypes</h1>
+
+                    <!-- Concept 1: Introduction to HTML -->
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-semibold mb-4">Built-in Data Types</h2>
+                        <p class="text-gray-700 mb-4">
+                     <code>In programming, data type is an important concept.
+
+Variables can store data of different types, and different types can do different things.
+
+Python has the following data types built-in by default, in these categories:</code>
+<br>
+<p>
+Text Type:	     <span class="keywords bg-gray-100">str</span>
+<br>
+<br>
+Numeric Types:	<span class="keywords bg-gray-100">int, float, complex</span>
+<br>
+<br>
+Sequence Types:	<span class="keywords bg-gray-100">list, tuple, range</span>
+<br>
+<br>
+Mapping Type:	<span class="keywords bg-gray-100">dict</span>
+<br>
+<br>
+Set Types:	    <span class="keywords bg-gray-100">set, frozenset</span>
+<br>
+<br>
+Boolean Type:	<span class="keywords bg-gray-100">bool</span>
+<br>
+<br>
+Binary Types:	<span class="keywords bg-gray-100">bytes, bytearray, memoryview</span>
+<br>
+<br>
+None Type:	    <span class="keywords bg-gray-100">NoneTyp</span>
+</p>
+                       </p>
+                       
+                       
+                    </div>
+
+                    <!-- Concept 2: Basic HTML Structure -->
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-semibold mb-4">Getting the Data Type</h2>
+                        <p class="text-gray-700 mb-4">
+                           You can get the data type of any object by using the <span class="keyword">type()</span> function:
+
+
+<br>
+                          <pre id="code-block">
+<span class="comment"># Datatypes in Python</span>
+<span class="keyword">x</span> = <span class="number">5</span>
+
+<span class="function">print</span>(<span class="keyword">type(<span class="number">3</span>)</span>)
+</pre>
+<br>
+ <button id="copy-button" class="absolute bg-blue-600 text-white py-1 px-3 rounded hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300">
+                Copy
+            </button>
+                        </p>
+                    </div>
+
+<br>
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-semibold mb-4">Setting the Data Type</h2>
+                        <p class="text-gray-700 mb-4">
+                        In Python, the data type is set when you assign a value to a variable:
+                        </p>
+                        <pre id="code-block1">
+<span class="comment"># Setting a datatype in Python</span>
+<span class="keyword">x</span> = <span class="string">"Hello World!"</span>      <span class="comment"># String Datatype</span>
+<span class="keyword">x</span> = <span class="number">3</span>                   <span class="comment"># integer Datatype</span>
+<span class="keyword">x</span> = <span class="number">3.5</span>                 <span class="comment"># Float Datatype</span>
+<span class="keyword">x</span> = <span class="number">[ <span class="string">"apple"</span>, <span class="string">"banana"</span>,<span class="string">"mango"</span>]     </span><span class="comment"># List Datatype</span>
+<span class="keyword">x</span> = <span class="number">(<span class="string">"apple"</span>, <span class="string">"banana"</span>, <span class="string">"mango"</span>)      </span><span class="comment"># String Datatype</span>
+<span class="keyword">x</span> = <span class="function">True</span>              <span class="comment"># Boolean Datatype</span>
+
+</pre>
+<br>
+ <button id="copy-button1" class="absolute bg-blue-600 text-white py-1 px-3 rounded hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300">
+                Copy
+            </button>
+                    </div>
+
+
+<br>
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-semibold mb-4">Setting the Specific Data Type</h2>
+                        <p class="text-gray-700 mb-4">
+                      If you want to specify the data type, you can use the following constructor functions:
+                      <pre id="code-block2">
+<span class="comment"># Specifing DataType in Python</span>
+<span class="keyword">x</span> = <span class="string">str(<span class="number">3</span>)</span>
+<span class="keyword">x</span> = <span class="string">str(<span class="number">3.5</span>)</span>
+<span class="keyword">x</span> = <span class="string">float(<span class="string">"Hello World!"</span>)</span>
+<span class="keyword">x</span> = <span class="string">int(<span class="string">"Hello World!"</span>)</span>
+<span class="keyword">x</span> = <span class="string">bool(<span class="number">3</span>)</span>
+
+</pre>
+<br>
+ <button id="copy-button2" class="absolute bg-blue-600 text-white py-1 px-3 rounded hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300">
+                Copy
+            </button>
+                        </p>
+                    </div>
+                </section>
+
+                <!-- HTML Code Editor Section -->
+                 {{!-- {{>py_editor}} --}}
+
+            </div>
+        </div>
+    </div>
+
+     <!-- JavaScript to Handle Sidebar Toggle and HTML Editor -->
+     <script>
+    document.getElementById('copy-button1').addEventListener('click', function () {
+            const codeBlock = document.getElementById('code-block1').innerText;
+            navigator.clipboard.writeText(codeBlock).then(() => {
+                alert('Code copied to clipboard!');
+            }).catch(err => {
+                console.error('Error copying code: ', err);
+            });
+        });
+    document.getElementById('copy-button').addEventListener('click', function () {
+            const codeBlock = document.getElementById('code-block').innerText;
+            navigator.clipboard.writeText(codeBlock).then(() => {
+                alert('Code copied to clipboard!');
+            }).catch(err => {
+                console.error('Error copying code: ', err);
+            });
+        });
+    document.getElementById('copy-button2').addEventListener('click', function () {
+            const codeBlock = document.getElementById('code-block2').innerText;
+            navigator.clipboard.writeText(codeBlock).then(() => {
+                alert('Code copied to clipboard!');
+            }).catch(err => {
+                console.error('Error copying code: ', err);
+            });
+        });
+  </script>
+
+    </body>
+    </html>
